@@ -77,11 +77,11 @@ public class ImageEnhanceActivity extends AppCompatActivity {
 //                    final ExifInterface exif = new ExifInterface(path);
 //                    final int orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_UNDEFINED);
                     final Matrix matrix = new Matrix();
-                    matrix.postRotate(-90);
+                    matrix.postRotate(90);
                     final Bitmap bmRotated = Bitmap.createBitmap(selectedImageBitmap, 0, 0, selectedImageBitmap.getWidth(), selectedImageBitmap.getHeight(), matrix, true);
                    // selectedImageBitmap.recycle();
                     imageView.setImageBitmap(bmRotated);
-                    imageView.animate().rotationBy(-90);
+                    imageView.animate().rotationBy(90);
 
                 }
             });
@@ -97,10 +97,10 @@ public class ImageEnhanceActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     final Matrix matrix = new Matrix();
-                    matrix.postRotate(90);
+                    matrix.postRotate(-90);
                     final Bitmap bmRotated = Bitmap.createBitmap(selectedImageBitmap, 0, 0, selectedImageBitmap.getWidth(), selectedImageBitmap.getHeight(), matrix, true);
                     imageView.setImageBitmap(bmRotated);
-                    imageView.animate().rotationBy(90);
+                    imageView.animate().rotationBy(-90);
                 }
             });
             //imageView.setImageBitmap(nativeClass.getMagicColorBitmap(selectedImageBitmap));
