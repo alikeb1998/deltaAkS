@@ -115,12 +115,13 @@ public class ImageEnhanceActivity extends AppCompatActivity {
             Mat imgSource = new Mat();
             Utils.bitmapToMat(bmp32, imgSource);
 
-            Imgproc.GaussianBlur(imgSource, imgSource, new Size(5, 5), 5);
+           // Imgproc.GaussianBlur(imgSource, imgSource, new Size(5, 5), 5);
 
-            Mat gray = new Mat(imgSource.size(), CvType.CV_8UC1);
-            Imgproc.cvtColor(imgSource, gray, Imgproc.COLOR_RGBA2GRAY);
+//            Mat gray = new Mat(imgSource.size(), CvType.CV_8UC1);
+            Mat gray = new Mat();
+            Imgproc.cvtColor(imgSource, gray, Imgproc.COLOR_BGR2GRAY);
 
-            Imgproc.Canny(gray, gray, 50, 50);
+           // Imgproc.Canny(gray, gray, 50, 50);
 
 
 
@@ -128,6 +129,7 @@ public class ImageEnhanceActivity extends AppCompatActivity {
             Bitmap bmp = null;
             bmp = Bitmap.createBitmap(gray.cols(), gray.rows(), Bitmap.Config.ARGB_8888);
             Utils.matToBitmap(gray, bmp);
+            selectedImageBitmap = bmp;
             imageView.setImageBitmap(bmp);
 
         }
