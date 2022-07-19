@@ -92,7 +92,7 @@ public class ImageEnhanceActivity extends AppCompatActivity {
     private View.OnClickListener RotateRightClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            //TODO: create magic color
+
             imageView.post(new Runnable() {
                 @Override
                 public void run() {

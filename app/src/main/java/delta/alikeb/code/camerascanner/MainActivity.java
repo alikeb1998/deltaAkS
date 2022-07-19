@@ -14,7 +14,7 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 
 import delta.alikeb.code.camerascanner.helpers.MyConstants;
-import delta.alikeb.code.camerascanner.R;
+
 
 public class MainActivity extends AppCompatActivity {
 
